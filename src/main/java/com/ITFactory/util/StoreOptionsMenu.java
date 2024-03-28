@@ -35,7 +35,7 @@ public class StoreOptionsMenu {
             boolean IncorectOption = true;
             while (IncorectOption) {
                 try {
-                    System.out.print("Please, enter the your option: ");
+                    System.out.print("Please, enter your option: ");
                     option = Integer.parseInt(userInput.nextLine());
                     IncorectOption = false;
                 } catch (NumberFormatException e) {
