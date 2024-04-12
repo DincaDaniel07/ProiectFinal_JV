@@ -38,7 +38,7 @@ public class ProductDao {
 
     public List<Product> retrieveAllProducts() {
 
-        List<Product> DBProducts = new ArrayList<>();
+        List<Product> dbProducts = new ArrayList<>();
 
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
 //            System.out.println("Connected to MySQL database!");
@@ -53,13 +53,13 @@ public class ProductDao {
                 double productPrice = resultSet.getDouble("product_price");
                 int productQuantity = resultSet.getInt("product_quantity");
                 Product product = new Product(productName, productPrice, productQuantity);
-                DBProducts.add(product);
+                dbProducts.add(product);
             }
 
         } catch (SQLException e) {
             System.out.println("Connection failure!");
         }
-        return DBProducts;
+        return dbProducts;
     }
 
     public void updateProductPrice(Product product, double newPrice) {
